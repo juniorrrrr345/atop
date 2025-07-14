@@ -1,22 +1,23 @@
+import React from "react";
 import { Switch, Route } from "wouter";
-import { queryClient } from "./queryClient";
+import { queryClient } from "@/lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "./toaster";
-import { TooltipProvider } from "./tooltip";
-import NotFound from "./not-found";
-import Home from "./home";
-import Admin from "./admin";
-import InfosPage from "./infos";
-import CanalPage from "./canal";
-import { ThemeProvider } from "./ThemeProvider";
-import BottomNav from "./BottomNav";
-import { PageBackground } from "./PageBackground";
-import { GlobalProductDrawer } from "./GlobalProductDrawer";
-import InitialLoading from "./InitialLoading";
-import PageTitle from "./PageTitle";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import NotFound from "@/pages/not-found";
+import Home from "@/pages/home";
+import Admin from "@/pages/admin";
+import InfosPage from "@/pages/infos";
+import CanalPage from "@/pages/canal";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import BottomNav from "@/components/BottomNav";
+import { PageBackground } from "@/components/PageBackground";
+import { GlobalProductDrawer } from "@/components/GlobalProductDrawer";
+import InitialLoading from "@/components/InitialLoading";
+import PageTitle from "@/components/PageTitle";
 
 // Import ShowcasePanel pour la vitrine
-import ShowcasePanel from "./ShowcasePanel";
+import ShowcasePanel from "@/components/ShowcasePanel";
 
 // Page Showcase avec le composant ShowcasePanel
 function ShowcasePage() {
