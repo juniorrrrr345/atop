@@ -1,238 +1,258 @@
 import React from 'react';
-import { Leaf, Shield, Info, Heart, Brain, Zap, AlertTriangle } from 'lucide-react';
+import { Leaf, Shield, Heart, Brain, Beaker, CheckCircle } from 'lucide-react';
 
 const InfosPage: React.FC = () => {
   const benefits = [
     {
       icon: Heart,
       title: "Bien-être général",
-      description: "Le CBD peut contribuer à un sentiment général de bien-être et de relaxation."
+      description: "Le CBD peut contribuer à une sensation de bien-être et de relaxation naturelle."
     },
     {
       icon: Brain,
       title: "Équilibre mental",
-      description: "Aide à maintenir un équilibre émotionnel et mental au quotidien."
+      description: "Aide à maintenir l'équilibre mental et peut favoriser un état d'esprit calme."
     },
     {
-      icon: Zap,
-      title: "Récupération",
-      description: "Favorise la récupération après l'effort physique et le stress."
+      icon: Shield,
+      title: "Propriétés antioxydantes",
+      description: "Le CBD possède des propriétés antioxydantes qui peuvent protéger les cellules."
     }
   ];
 
-  const categories = [
-    {
-      name: "Huiles CBD",
-      description: "Extraits liquides à consommer sous la langue",
-      concentration: "5% à 30%",
-      usage: "Sublingual"
-    },
-    {
-      name: "Fleurs CBD",
-      description: "Fleurs séchées à vaporiser ou infuser",
-      concentration: "8% à 25%",
-      usage: "Vaporisation, infusion"
-    },
-    {
-      name: "Résines CBD",
-      description: "Concentrés résineux de haute qualité",
-      concentration: "15% à 40%",
-      usage: "Vaporisation"
-    },
-    {
-      name: "Cosmétiques CBD",
-      description: "Produits topiques pour usage externe",
-      concentration: "1% à 5%",
-      usage: "Application cutanée"
-    }
-  ];
-
-  const legalInfo = [
-    {
-      title: "Légalité en France",
-      description: "Le CBD est légal en France tant que le taux de THC ne dépasse pas 0,2%."
-    },
-    {
-      title: "Conformité européenne",
-      description: "Tous nos produits respectent la réglementation européenne en vigueur."
-    },
-    {
-      title: "Contrôles qualité",
-      description: "Chaque lot est testé en laboratoire indépendant pour garantir la conformité."
-    }
+  const qualityPoints = [
+    "Extraction par CO2 supercritique",
+    "Tests en laboratoire tiers",
+    "Certificats d'analyse disponibles",
+    "Conformité THC < 0,2%",
+    "Agriculture biologique certifiée",
+    "Traçabilité complète"
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 space-y-16">
-      {/* Header */}
-      <section className="text-center space-y-6">
-        <div className="flex items-center justify-center gap-4">
-          <Leaf className="h-12 w-12 text-green-400" />
-          <div>
-            <h1 className="text-4xl font-bold cbd-text-gradient">Tout savoir sur le CBD</h1>
-            <p className="text-xl text-gray-400 mt-2">
-              Informations complètes sur nos produits CBD légaux et de qualité
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      <div className="container mx-auto px-4 py-12">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+            Tout savoir sur le CBD
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Découvrez les propriétés du cannabidiol, ses bienfaits potentiels et 
+            pourquoi nos produits respectent les plus hauts standards de qualité
+          </p>
+        </div>
+
+        {/* Qu'est-ce que le CBD */}
+        <section className="mb-16">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+            <div className="flex items-center mb-6">
+              <Leaf className="h-8 w-8 text-green-400 mr-3" />
+              <h2 className="text-3xl font-bold">Qu'est-ce que le CBD ?</h2>
+            </div>
+            <div className="prose prose-invert max-w-none">
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                Le <strong className="text-green-400">cannabidiol (CBD)</strong> est un composé naturel présent dans la plante de cannabis. 
+                Contrairement au THC, le CBD n'est pas psychoactif et ne provoque pas d'effet "planant". 
+                Il fait partie des cannabinoïdes, des molécules qui interagissent avec le système endocannabinoïde de notre corps.
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Le CBD est légal en France lorsque le taux de THC des produits ne dépasse pas 0,2%. 
+                Nos produits respectent scrupuleusement cette réglementation et sont régulièrement testés 
+                pour garantir leur conformité.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Bienfaits potentiels */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Bienfaits potentiels du CBD</h2>
+            <p className="text-gray-400 text-lg">
+              Le CBD fait l'objet de nombreuses recherches pour ses propriétés thérapeutiques potentielles
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* What is CBD */}
-      <section className="space-y-8">
-        <h2 className="text-3xl font-bold text-center">Qu'est-ce que le CBD ?</h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-            <div className="flex items-center gap-3 mb-4">
-              <Info className="h-6 w-6 text-blue-400" />
-              <h3 className="text-xl font-bold">Définition</h3>
-            </div>
-            <div className="space-y-4">
-              <p className="text-gray-300">
-                Le CBD (Cannabidiol) est un composé naturel présent dans le cannabis. 
-                Contrairement au THC, le CBD n'a pas d'effet psychoactif et ne provoque 
-                pas de sensation d'euphorie ou de "high".
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="bg-green-600/20 text-green-300 px-3 py-1 rounded-full text-sm border border-green-500/30">
-                  Non psychoactif
-                </span>
-                <span className="bg-green-600/20 text-green-300 px-3 py-1 rounded-full text-sm border border-green-500/30">
-                  100% Légal
-                </span>
-                <span className="bg-green-600/20 text-green-300 px-3 py-1 rounded-full text-sm border border-green-500/30">
-                  Naturel
-                </span>
-                <span className="bg-green-600/20 text-green-300 px-3 py-1 rounded-full text-sm border border-green-500/30">
-                  Sans addiction
-                </span>
-              </div>
-            </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => {
+              const IconComponent = benefit.icon;
+              return (
+                <div key={index} className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 text-center">
+                  <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <IconComponent className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
+                  <p className="text-gray-300">{benefit.description}</p>
+                </div>
+              );
+            })}
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-            <div className="flex items-center gap-3 mb-4">
-              <Shield className="h-6 w-6 text-green-400" />
-              <h3 className="text-xl font-bold">Légalité</h3>
-            </div>
-            <div className="space-y-4">
-              <p className="text-gray-300">
-                En France, le CBD est légal si le produit fini contient moins de 0,2% de THC. 
-                Cette réglementation garantit l'absence d'effets psychoactifs tout en 
-                préservant les bienfaits potentiels du CBD.
-              </p>
-              <div className="bg-green-900/30 p-4 rounded-lg border border-green-500/30">
-                <p className="text-sm font-medium text-green-300">
-                  ✓ Conforme à la législation française et européenne
-                </p>
-                <p className="text-sm text-green-200">
-                  ✓ Contrôlé et testé en laboratoire indépendant
+          <div className="mt-8 bg-blue-900/20 border border-blue-500/30 rounded-lg p-6">
+            <div className="flex items-start space-x-3">
+              <Beaker className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-blue-300 mb-2">Recherche en cours</h4>
+                <p className="text-sm text-blue-200">
+                  Les effets du CBD font l'objet de recherches scientifiques continues. Les informations présentées 
+                  ne constituent pas des allégations médicales et ne remplacent pas l'avis d'un professionnel de santé.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Benefits */}
-      <section className="space-y-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">Bienfaits Potentiels</h2>
-          <p className="text-gray-400">
-            Le CBD est étudié pour ses propriétés potentielles sur le bien-être
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <div key={index} className="text-center space-y-4 p-6 bg-gray-800/30 rounded-lg border border-gray-700">
-                <Icon className="h-12 w-12 mx-auto text-green-400" />
-                <h3 className="font-semibold text-lg">{benefit.title}</h3>
-                <p className="text-gray-400 text-sm">{benefit.description}</p>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="bg-amber-900/20 border border-amber-500/30 rounded-lg p-6">
-          <div className="flex items-start gap-3">
-            <Info className="h-5 w-5 text-amber-400 mt-0.5" />
+        {/* Notre qualité */}
+        <section className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h4 className="font-semibold text-amber-300">Important</h4>
-              <p className="text-sm text-amber-200 mt-1">
-                Les informations présentées ne constituent pas des conseils médicaux. 
-                Consultez votre médecin avant utilisation, notamment si vous prenez 
-                des médicaments ou avez des conditions médicales particulières.
+              <h2 className="text-3xl font-bold mb-6 flex items-center">
+                <Shield className="h-8 w-8 text-green-400 mr-3" />
+                Notre engagement qualité
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                Nous nous engageons à vous proposer des produits CBD de la plus haute qualité. 
+                Chaque étape de notre processus, de la culture à la vente, est rigoureusement contrôlée.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Categories */}
-      <section className="space-y-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">Nos Catégories de Produits</h2>
-          <p className="text-gray-400">
-            Découvrez notre gamme complète de produits CBD
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {categories.map((category, index) => (
-            <div key={index} className="bg-gray-800/50 p-6 rounded-lg border border-gray-700">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-lg font-bold">{category.name}</h3>
-                <span className="bg-green-600/20 text-green-300 px-2 py-1 rounded text-sm border border-green-500/30">
-                  {category.concentration}
-                </span>
-              </div>
-              <p className="text-gray-400 mb-3">{category.description}</p>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Mode d'utilisation:</span>
-                <span className="text-green-400 font-medium">{category.usage}</span>
+              <div className="space-y-3">
+                {qualityPoints.map((point, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 flex-shrink-0" />
+                    <span className="text-gray-300">{point}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Legal Framework */}
-      <section className="space-y-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">Cadre Légal</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {legalInfo.map((info, index) => (
-            <div key={index} className="bg-gray-800/50 p-6 rounded-lg border border-gray-700 text-center">
-              <Shield className="h-8 w-8 text-green-400 mx-auto mb-4" />
-              <h3 className="text-lg font-bold mb-3">{info.title}</h3>
-              <p className="text-sm text-gray-400">{info.description}</p>
+            
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+              <h3 className="text-2xl font-bold mb-6 text-green-400">Processus de production</h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold mb-2">1. Culture biologique</h4>
+                  <p className="text-gray-300 text-sm">
+                    Nos plantes de chanvre sont cultivées sans pesticides ni herbicides, 
+                    dans des conditions optimales en Europe.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold mb-2">2. Extraction CO2</h4>
+                  <p className="text-gray-300 text-sm">
+                    L'extraction par CO2 supercritique préserve tous les composés bénéfiques 
+                    sans solvants chimiques.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold mb-2">3. Tests laboratoire</h4>
+                  <p className="text-gray-300 text-sm">
+                    Chaque lot est analysé par un laboratoire indépendant pour garantir 
+                    pureté et concentration.
+                  </p>
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Legal Warnings */}
-      <section className="bg-red-900/20 border border-red-500/30 rounded-lg p-6">
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <AlertTriangle className="h-6 w-6 text-red-400" />
-            <h3 className="font-semibold text-red-300 text-lg">Avertissements et Précautions</h3>
+        {/* Légalité */}
+        <section className="mb-16">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+            <h2 className="text-3xl font-bold mb-6 flex items-center">
+              <Shield className="h-8 w-8 text-green-400 mr-3" />
+              Légalité en France
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-green-400">Réglementation actuelle</h3>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>CBD autorisé avec THC ≤ 0,2%</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>Vente libre aux adultes (+18 ans)</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>Produits dérivés légaux</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>Contrôles qualité obligatoires</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-green-400">Nos garanties</h3>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>Tous nos produits sont conformes</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>Certificats d'analyse disponibles</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>Traçabilité complète</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span>Support client expert</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-red-200">
-            <p>• Réservé aux adultes de plus de 18 ans</p>
-            <p>• Ne pas conduire ou utiliser des machines après consommation</p>
-            <p>• Déconseillé aux femmes enceintes et allaitantes</p>
-            <p>• Tenir hors de portée des enfants</p>
-            <p>• Consultez votre médecin en cas de doute ou de traitement médical</p>
-            <p>• Ne pas dépasser les doses recommandées</p>
+        </section>
+
+        {/* Conseils d'utilisation */}
+        <section className="mb-16">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+            <h2 className="text-3xl font-bold mb-6">Conseils d'utilisation</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-green-400">Pour commencer</h3>
+                <ul className="space-y-3 text-gray-300">
+                  <li>• Commencez par de faibles doses</li>
+                  <li>• Augmentez progressivement si nécessaire</li>
+                  <li>• Respectez les dosages recommandés</li>
+                  <li>• Consultez votre médecin si vous prenez des médicaments</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-green-400">Conservation</h3>
+                <ul className="space-y-3 text-gray-300">
+                  <li>• Conserver dans un endroit frais et sec</li>
+                  <li>• À l'abri de la lumière directe</li>
+                  <li>• Tenir hors de portée des enfants</li>
+                  <li>• Vérifier les dates de péremption</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Avertissement légal */}
+        <section>
+          <div className="bg-amber-900/20 border border-amber-500/30 rounded-lg p-6">
+            <div className="flex items-start space-x-3">
+              <Shield className="h-5 w-5 text-amber-400 mt-0.5 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-amber-300 mb-2">Avertissement important</h4>
+                <p className="text-sm text-amber-200">
+                  Ces informations sont fournies à titre éducatif uniquement. Les produits CBD ne sont pas destinés 
+                  à diagnostiquer, traiter, guérir ou prévenir une maladie. Les femmes enceintes ou allaitantes 
+                  et les personnes sous traitement médical doivent consulter leur médecin avant utilisation. 
+                  Ne pas conduire après consommation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
