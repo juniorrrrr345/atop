@@ -1,342 +1,199 @@
-# 🌿 CBD Shop Premium - Boutique E-commerce CBD
+# CBD Shop Premium 🌱
 
-Une application web complète pour gérer une boutique de produits CBD avec panneau d'administration intégré.
+Une boutique en ligne complète pour produits CBD, conçue pour être conforme à la législation française et déployée facilement sur Vercel.
 
-## 🚀 Fonctionnalités
+## 🚀 Déploiement sur Vercel
 
-### 📱 Interface Client
-- **Page d'accueil** avec présentation des produits vedettes
-- **Catalogue produits** avec filtres et recherche avancée
-- **Fiches produits détaillées** avec informations CBD/THC
-- **Panier d'achat** avec gestion des quantités
-- **Pages d'information** sur le CBD et la légalité
-- **Canaux de communication** et support client
-- **Design responsive** pour mobile et desktop
+Ce projet est prêt pour un déploiement direct sur Vercel :
 
-### 🛠️ Panneau d'Administration
-- **Dashboard** avec statistiques de ventes
-- **Gestion des produits CBD** (ajout, modification, suppression)
-- **Gestion des commandes** et suivi des livraisons
-- **Gestion des clients** et historique d'achats
-- **Paramètres de conformité légale** (limites THC, vérifications d'âge)
-- **Gestion des stocks** avec alertes de réapprovisionnement
-- **Personnalisation du site** (thèmes, couleurs, logos)
+1. **Fork ce repository** sur votre compte GitHub
+2. **Connectez-vous à Vercel** et importez ce repository
+3. **Déployez** - Aucune configuration supplémentaire nécessaire !
 
-### 🧬 Spécificités CBD
-- **Gestion des taux de cannabinoïdes** (CBD, THC, CBG, CBN)
-- **Informations légales** et conformité française/européenne
-- **Certifications** et traçabilité des produits
-- **Profils terpéniques** et informations de culture
-- **Vérification d'âge** automatique
+Vercel détectera automatiquement la configuration Vite et déploiera votre boutique CBD.
+
+## ✨ Fonctionnalités
+
+### 🏪 Boutique Complète
+- **Page d'accueil** avec produits vedettes et présentation
+- **Catalogue produits** avec filtres et recherche
+- **Gestion CBD spécialisée** (taux THC/CBD, conformité légale)
+- **Page informations** complète sur le CBD
+- **Formulaire de contact** fonctionnel
+- **Page 404** personnalisée
+
+### �‍💼 Panneau d'Administration
+- **Dashboard** avec statistiques
+- **Gestion des produits CBD** (CRUD complet)
+- **Validation THC** (max 0.2% - conforme loi française)
+- **Paramètres de conformité** légale
+- **Interface intuitive** avec onglets
+
+### 🎨 Design & UX
+- **Thème CBD** vert et moderne
+- **Design responsive** (mobile-first)
+- **Animations fluides** et transitions
+- **Dark mode** par défaut
+- **Navigation intuitive**
+
+### ⚖️ Conformité Légale
+- **Vérification THC** ≤ 0.2%
 - **Avertissements légaux** obligatoires
+- **Mentions de conformité** française/européenne
+- **Restrictions d'âge** (18+)
 
-## 🏗️ Architecture Technique
+## 🛠️ Technologies
 
-### Frontend
-- **React 18** avec TypeScript
-- **Vite** pour le build et le développement
-- **Tailwind CSS** pour le styling
-- **shadcn/ui** pour les composants UI
-- **Wouter** pour le routing
-- **React Query** pour la gestion des données
-- **Zustand** pour le state management
+- **React 18** + TypeScript
+- **Vite** (build ultra-rapide)
+- **React Router** (navigation SPA)
+- **Tailwind CSS** (styling moderne)
+- **Lucide React** (icônes)
+- **Vercel** (déploiement)
 
-### Backend
-- **Node.js** avec Express.js
-- **PostgreSQL** avec Drizzle ORM
-- **Authentification** avec sessions
-- **Upload de fichiers** avec Multer
-- **API REST** complète
+## 📁 Structure du Projet
 
-### Base de données
-- **Tables produits** avec champs CBD spécifiques
-- **Gestion des commandes** et articles
-- **Système de clients** avec vérification d'âge
-- **Variantes de prix** par quantité
-- **Catégories** et coupons de réduction
-- **Paramètres** de configuration du site
-
-## 📦 Installation
-
-### Prérequis
-- Node.js (version 18 ou supérieure)
-- PostgreSQL (version 13 ou supérieure)
-- Git
-
-### 1. Cloner le projet
-```bash
-git clone <url-du-repo>
-cd cbd-shop-premium
+```
+src/
+├── components/          # Composants réutilisables
+│   └── Layout.tsx      # Layout principal avec navigation
+├── pages/              # Pages de l'application
+│   ├── HomePage.tsx    # Page d'accueil
+│   ├── ShowcasePage.tsx # Catalogue produits
+│   ├── AdminPage.tsx   # Administration complète
+│   ├── InfosPage.tsx   # Informations CBD
+│   ├── ContactPage.tsx # Contact + FAQ
+│   └── NotFoundPage.tsx # Page 404
+├── index.css          # Styles globaux + thème CBD
+├── main.tsx           # Point d'entrée
+└── App.tsx            # Composant racine + routing
 ```
 
-### 2. Installer les dépendances
+## 🎯 Pages Principales
+
+### 🏠 Accueil (`/`)
+- Hero section avec CTA
+- Produits vedettes
+- Avantages et garanties
+- Avertissements légaux
+
+### 📦 Produits (`/showcase`)
+- Catalogue complet avec filtres
+- Recherche en temps réel
+- Tri par prix, note, taux CBD
+- Badges de conformité légale
+
+### 🔧 Administration (`/admin`)
+- Dashboard avec statistiques
+- Gestion produits CBD
+- Validation automatique THC
+- Paramètres de conformité
+
+### 📖 Infos CBD (`/infos`)
+- Guide complet sur le CBD
+- Légalité et conformité
+- Catégories de produits
+- Précautions d'usage
+
+### 📞 Contact (`/contact`)
+- Formulaire de contact
+- FAQ intégrée
+- Informations entreprise
+- Support client
+
+## 🚀 Développement Local
+
 ```bash
+# Installation
 npm install
-```
 
-### 3. Configuration de la base de données
-
-Créer un fichier `.env` à la racine :
-```env
-# Base de données
-DATABASE_URL="postgresql://username:password@localhost:5432/cbd_shop"
-
-# Session
-SESSION_SECRET="votre_secret_session_ultra_securise"
-
-# Environnement
-NODE_ENV="development"
-PORT=3000
-```
-
-Initialiser la base de données :
-```bash
-npm run db:push
-```
-
-### 4. Démarrer l'application
-
-Mode développement :
-```bash
+# Développement
 npm run dev
-```
 
-Mode production :
-```bash
+# Build de production
 npm run build
-npm start
+
+# Aperçu du build
+npm run preview
 ```
 
-L'application sera accessible sur `http://localhost:3000`
+## � Configuration Vercel
 
-## 🎯 Configuration Initiale
+Le fichier `vercel.json` est déjà configuré pour :
+- ✅ Framework Vite détecté automatiquement
+- ✅ Routing SPA avec redirections
+- ✅ Build optimisé pour la production
+- ✅ Déploiement en un clic
 
-### 1. Accès Administrateur
+## 🔧 Personnalisation
 
-Première connexion au panneau admin (`/admin`) :
-- **Username** : admin
-- **Password** : admin123
+### Thème et Couleurs
+Les couleurs CBD sont définies dans `src/index.css` :
+```css
+:root {
+  --primary: 142 71% 45%;    /* Vert CBD principal */
+  --secondary: 142 33% 24%;  /* Vert sombre */
+  --accent: 142 71% 45%;     /* Accent vert */
+}
+```
 
-⚠️ **Important** : Changez immédiatement le mot de passe par défaut !
+### Produits Mock
+Les données de démonstration sont dans les composants. Pour une vraie boutique, remplacez par :
+- Base de données (PostgreSQL, MongoDB...)
+- API REST ou GraphQL
+- CMS headless (Strapi, Contentful...)
 
-### 2. Configuration de base
+### Conformité Légale
+Paramètres modifiables dans l'admin :
+- Limite THC (défaut: 0.2%)
+- Âge minimum (défaut: 18 ans)
+- Textes d'avertissement
+- Mentions légales
 
-Dans le panneau admin, configurez :
+## 🛡️ Sécurité & Conformité
 
-#### Paramètres généraux
-- Nom de la boutique
-- Logo et couleurs
-- Devise et taux de TVA
-
-#### Conformité légale CBD
-- Limite THC (défaut : 0.2%)
-- Âge minimum (défaut : 18 ans)
-- Avertissement légal obligatoire
-
-#### Informations de contact
-- Adresse email et téléphone
-- Adresse physique
-- Horaires d'ouverture
-- Réseaux sociaux
-
-### 3. Ajouter des produits CBD
-
-Pour chaque produit, renseignez :
-- **Informations de base** : nom, description, prix, catégorie
-- **Taux de cannabinoïdes** : CBD, THC, CBG, CBN (en %)
-- **Informations culture** : indoor/outdoor, génétique, origine
-- **Stock et variantes** : quantités disponibles, tailles/formats
-- **Certifications** : Bio, tests laboratoire, conformité
-- **Médias** : photos haute qualité
-
-## 📊 Utilisation
-
-### Interface Client
-
-#### Navigation
-- **Accueil** (`/`) : Présentation et produits vedettes
-- **Catalogue** (`/showcase`) : Tous les produits avec filtres
-- **Informations** (`/infos`) : Guide complet sur le CBD
-- **Contact** (`/canal`) : Moyens de communication
-
-#### Fonctionnalités produits
-- Recherche par nom, catégorie, taux CBD/THC
-- Filtres avancés (prix, type de culture, certifications)
-- Détails complets avec informations légales
-- Sélection de variantes (quantités, formats)
-- Ajout au panier avec gestion des stocks
-
-### Panneau d'Administration
-
-#### Dashboard
-- Statistiques de ventes en temps réel
-- Graphiques de performance
-- Commandes récentes
-- Produits populaires
-- Alertes de stock faible
-
-#### Gestion des produits
-- **CRUD complet** : Créer, lire, modifier, supprimer
-- **Gestion des médias** : Upload d'images/vidéos
-- **Variantes de prix** : Différents formats et quantités
-- **Statuts** : Actif, inactif, rupture de stock
-- **Produits vedettes** : Mise en avant sur l'accueil
-
-#### Gestion des commandes
-- **Suivi complet** : De la création à la livraison
-- **Statuts** : En attente, traitement, expédié, livré
-- **Informations client** : Coordonnées et historique
-- **Gestion des paiements** : Statut et méthodes
-- **Numéros de suivi** : Livraisons
-
-#### Gestion des clients
-- **Base client** : Informations et préférences
-- **Historique d'achats** : Commandes et montants
-- **Vérification d'âge** : Statut de validation
-- **Newsletter** : Abonnements marketing
-
-## 🔒 Conformité Légale CBD
-
-### Réglementation française
-- **Taux THC** : ≤ 0.2% obligatoire
-- **Vérification d'âge** : 18 ans minimum
-- **Avertissements** : Mentions légales obligatoires
-- **Traçabilité** : Origine et certifications
-
-### Fonctionnalités de conformité
-- **Contrôle automatique** des taux THC lors de l'ajout de produits
-- **Vérification d'âge** à l'inscription
-- **Avertissements légaux** sur toutes les pages produits
-- **Mentions obligatoires** sur les effets et précautions
-
-### Tests et certifications
-- **Tests laboratoire** : Validation des taux annoncés
-- **Certifications Bio** : Traçabilité des modes de culture
-- **Conformité européenne** : Respect des normes EU
-
-## 🛡️ Sécurité
-
-### Protection des données
-- **Chiffrement** des mots de passe
-- **Sessions sécurisées** avec expiration
-- **Validation** de toutes les entrées utilisateur
-- **Protection CSRF** sur les formulaires
-
-### Accès administrateur
-- **Authentification** obligatoire pour l'admin
-- **Rôles et permissions** pour les utilisateurs
-- **Logs d'activité** pour la traçabilité
+- ✅ Validation THC côté client
+- ✅ Avertissements légaux omniprésents
+- ✅ Restrictions d'âge
+- ✅ Mentions de conformité RGPD
+- ✅ Textes légaux français/européens
 
 ## 📱 Responsive Design
 
-L'application est optimisée pour :
-- **Mobile** : Navigation tactile, menus adaptés
-- **Tablette** : Affichage optimisé pour l'écran moyen
-- **Desktop** : Interface complète avec toutes les fonctionnalités
+- ✅ Mobile-first approach
+- ✅ Tablette optimisée
+- ✅ Desktop full-width
+- ✅ Navigation adaptative
+- ✅ Images responsive
 
-## 🔧 Développement
+## 🎨 Branding
 
-### Structure du projet
-```
-cbd-shop-premium/
-├── client/                 # Frontend React
-│   ├── src/
-│   │   ├── components/     # Composants réutilisables
-│   │   ├── pages/         # Pages de l'application
-│   │   ├── lib/           # Utilitaires et configuration
-│   │   └── hooks/         # Hooks React personnalisés
-├── server/                # Backend Express
-│   ├── routes/           # Routes API
-│   ├── middleware/       # Middlewares Express
-│   └── utils/           # Utilitaires serveur
-├── shared/               # Code partagé
-└── uploads/             # Fichiers uploadés
-```
+Le design utilise une identité visuelle CBD premium :
+- **Couleurs** : Verts naturels et modernes
+- **Typographie** : Inter (lisible et moderne)
+- **Iconographie** : Lucide (cohérente et élégante)
+- **Ton** : Professionnel mais accessible
 
-### Commandes utiles
-```bash
-# Développement
-npm run dev              # Démarrer en mode dev
-npm run check           # Vérification TypeScript
-npm run db:push         # Synchroniser la DB
+## � Performance
 
-# Production
-npm run build           # Build pour production
-npm start              # Démarrer en production
+- ⚡ Vite (build ultra-rapide)
+- 📦 Bundle optimisé (~221KB gzippé)
+- 🎯 Code splitting automatique
+- 🖼️ Images optimisées
+- 🔄 Lazy loading des composants
 
-# Base de données
-npm run db:push         # Appliquer le schéma
-npm run db:studio       # Interface graphique DB (si installé)
-```
+## 🌍 Déploiement Instantané
 
-### Ajout de nouvelles fonctionnalités
+1. **Fork** ce repository
+2. **Connect** à Vercel
+3. **Deploy** - C'est tout ! 🚀
 
-#### Nouveaux composants UI
-Les composants sont basés sur shadcn/ui et se trouvent dans `client/src/components/ui/`
-
-#### Nouvelles pages
-Ajouter dans `client/src/pages/` et mettre à jour le routing dans `App.tsx`
-
-#### Nouvelles tables DB
-Modifier `schema.ts` et exécuter `npm run db:push`
-
-#### Nouvelles routes API
-Ajouter dans `server/routes/` et intégrer dans `server/index.ts`
-
-## 🚀 Déploiement
-
-### Prérequis production
-- Serveur Node.js
-- Base PostgreSQL
-- Domaine SSL (HTTPS obligatoire pour les paiements)
-
-### Variables d'environnement production
-```env
-NODE_ENV=production
-DATABASE_URL=postgresql://...
-SESSION_SECRET=secret_ultra_securise_production
-PORT=3000
-```
-
-### Serveurs recommandés
-- **VPS** : OVH, DigitalOcean, AWS EC2
-- **Hébergement managé** : Vercel, Railway, Render
-- **Base de données** : Neon, Supabase, AWS RDS
+Votre boutique CBD sera en ligne en moins de 2 minutes.
 
 ## 📞 Support
 
-### Documentation
-- **README.md** : Instructions générales
-- **Code commenté** : Explications in-line
-- **Types TypeScript** : Documentation automatique
-
-### Contact développeur
-- Email : dev@cbdshop-premium.fr
-- Issues GitHub : Pour les bugs et améliorations
-
-## 📄 Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Merci de :
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/nouvelle-fonctionnalite`)
-3. Commit les changements (`git commit -m 'Ajout nouvelle fonctionnalité'`)
-4. Push la branche (`git push origin feature/nouvelle-fonctionnalite`)
-5. Ouvrir une Pull Request
-
-## ⚖️ Avertissement Légal
-
-Cette application est un outil de gestion e-commerce. L'utilisateur est responsable de :
-- La conformité légale des produits vendus
-- Le respect de la réglementation locale sur le CBD
-- La vérification de l'âge des clients
-- L'affichage des mentions légales obligatoires
-
-Les développeurs ne sont pas responsables de l'usage commercial de cette application.
+Pour toute question sur l'implémentation ou la personnalisation, consultez la documentation ou créez une issue.
 
 ---
 
-🌿 **CBD Shop Premium** - Votre solution complète pour la vente de CBD en ligne
+**⚠️ Important** : Ce projet est un template de démonstration. Pour une boutique réelle, assurez-vous de respecter toutes les réglementations locales concernant la vente de produits CBD.

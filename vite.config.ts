@@ -6,18 +6,11 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve("./client/src"),
-      "@/components": path.resolve("./client/src/components"),
-      "@/pages": path.resolve("./client/src/pages"),
-      "@/lib": path.resolve("./client/src/lib"),
-      "@/hooks": path.resolve("./client/src/hooks"),
-      "@shared": path.resolve("./shared"),
-      "@assets": path.resolve("./attached_assets"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
-  root: "./client",
   build: {
-    outDir: "../dist",
+    outDir: "dist",
     emptyOutDir: true,
   },
 });
