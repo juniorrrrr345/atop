@@ -1,0 +1,10 @@
+node_modules
+.env
+.env.local
+.git
+*.log
+dist
+server
+*.md
+.vscode
+.idea
