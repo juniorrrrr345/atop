@@ -8,7 +8,8 @@ import CategorySettings from './CategorySettings';
 import { Product } from '@/lib/types';
 import ProductTable from './ProductTable';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Home, Info, Share2, ShoppingBag, Palette, Truck, LogOut, Settings, UserPlus, Users, Tags } from 'lucide-react';
+import { Home, Info, Share2, ShoppingBag, Palette, Truck, LogOut, Settings, UserPlus, Users, Tags, FileText } from 'lucide-react';
+import ContentSettings from './ContentSettings';
 import { PageBackground } from './PageBackground';
 import { useThemeStore } from '@/lib/themeStore';
 import { Link } from 'wouter';
@@ -249,6 +250,10 @@ export default function AdminPanel() {
                     <Settings className="h-4 w-4 mr-3" />
                     <span className="font-medium">Paramètres</span>
                   </TabsTrigger>
+                  <TabsTrigger value="content" className="data-[state=active]:bg-yellow-600/90 data-[state=active]:text-white px-6 py-3 rounded-md">
+                    <FileText className="h-4 w-4 mr-3" />
+                    <span className="font-medium">Contenu</span>
+                  </TabsTrigger>
                 </TabsList>
               </div>
             </div>
@@ -311,6 +316,13 @@ export default function AdminPanel() {
             <TabsContent value="theme">
               <div className="bg-gray-900/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-800">
                 <ThemeSettings />
+              </div>
+            </TabsContent>
+            
+            {/* Contenu Tab */}
+            <TabsContent value="content">
+              <div className="bg-gray-900/90 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-800">
+                <ContentSettings />
               </div>
             </TabsContent>
             
